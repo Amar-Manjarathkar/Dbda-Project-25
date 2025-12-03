@@ -1,7 +1,7 @@
 from transformers import AutoModel, AutoModelForSeq2SeqLM, AutoTokenizer, pipeline
 import torch
 # ⚠️ Replace 'YOUR_ACCESS_TOKEN_HERE' with the token you copied in Step 1
-HF_TOKEN = "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" 
+HF_TOKEN = "YOUR_ACCESS_TOKEN_HERE" 
 
 # Example Model: Indic-BERT (Requires token as it is gated)
 MODEL_ID = "ai4bharat/indic-bert"
