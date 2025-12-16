@@ -4,7 +4,7 @@ import os
 # --- Configuration ---
 MODEL_ID = "papluca/xlm-roberta-base-language-detection" 
 # Replace with the model you need (e.g., "bert-base-uncased")
-LOCAL_SAVE_PATH = r"C:\Users\amarn\OneDrive\Desktop\CDAC Project\Code\models"
+LOCAL_SAVE_PATH = r"C:\Users\amarn\OneDrive\Desktop\CDAC Project\Code\models\"
 
 # ---------------------
 
