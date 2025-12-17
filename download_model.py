@@ -1,15 +1,14 @@
-# C:\Users\amarn\OneDrive\Desktop\CDAC Project\Code\models
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
-from transformers import pipeline
+# Replace with the specific model you are using
+model_id = "ai4bharat/indictrans2-en-indic-dist-200M"
+local_dir = "./indictrans_model"
 
-# Specify the custom directory for this one download
-custom_path = "C:\\Users\\amarn\\OneDrive\\Desktop\\CDAC Project\\Code\\models" 
+# Download and save
+print("Downloading and saving model locally...")
+tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
+model = AutoModelForSeq2SeqLM.from_pretrained(model_id, trust_remote_code=True)
 
-language_classifier = pipeline(
-    "text-classification", 
-    model="papluca/xlm-roberta-base-language-detection",
-    # Pass the custom path here
-    cache_dir=custom_path
-)
-
-print(f"Model files are saved to: {custom_path}")
+tokenizer.save_pretrained(local_dir)
+model.save_pretrained(local_dir)
+print(f"Model saved to {local_dir}")
