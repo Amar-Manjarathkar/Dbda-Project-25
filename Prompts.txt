@@ -1,0 +1,50 @@
+You are an expert in LLM, Hugging Face Transformers and Agentic AI frameworks such as Lang Chain.
+
+I want your help in following project:
+Problem Statement: "Unified Prompt Engineering Framework Using Chain-of-Thought for Multi-Task NLP on Large Language Models"
+The Output Requirements are a fixed JSON Schema with following outputs:
+
+
+Step 0: Data Cleaning
+Global Cleaning 
+Temp Cleaning
+NOTE: Do not delete the data just skip the noise
+
+Make a data pipeline 
+
+1. Language Detection**: Detect the native language (e.g., "English", "Hindt"). If Romanized, label as "Roman_<Lang" (e.g., "Ronan Hindt") and transliterate core content to native script in transliterated'.
+
+2. "Domain Identification**: Detect up to 3 domains from: Politics, Crime, Millitary, Terrorism, Radicalisation, Extremism in J&K, Law and Order, Narcotics, Left Wing Extremism. Use "General" if none match. Rank 1-3 by relevance.
+
+3. **NER**: Extract unique entitles: PERSON, LOCATION, ORGANIZATION, EVENT, PRODUCT. Resolve person ambiguities (e.g., map surnames to full names if clear).
+
+4. Sentiment Analysis: Classify as "Positive", "Negative", "Neutral", or "Anti-National" (India perspective, e.g., undermining sovereignty). Set 'India perspective" to "Antt-National" if applicable, else null.
+NOTE: Model should understand the INDIAN CONTEXT
+
+5. Event & Date Mapping**: Identify events and map strictly to dd/mm/yyyy date fornat only. For gatherings, list text-based persons/organizations. Use empty array if no events.
+
+6. **Country Identification**: Classify as "Indian" if India-related; name neighbouring country (Pakistan, Sri Lanka, Afghanistan, Nepal, Bangladesh, China) if applicable; else "Abroad".
+
+7. **Relevancy: Assess relevance to Indian-context topics: Narcotics, Extremism in J&K, Terrorism, Radicalisation, Law and Order, Left Wing Extremism. List matches in 'relevant_to". Set confidence (0.0-1.0) and level: "High" , "medium" , "Low" with scores.
+
+8. "Translation**: If the domain is "General", skip this step. Otherwise, translate the original content into English if it is not in English. If the content is in English, set "translated text to null. Provide a justification for the translation action (e.g., "Content is in Hindi, translated to English" or "Content is in English, no translation needed") and a confidence score based on language detection and translation clarity.
+
+
+9. Summary: Summarize the content to approximately 25% of its original length, typically in 3-4 sentences. For Longer content (e.g., news articles), extend as needed while keeping concise. Relevant information only
+
+
+I have a questions for the step 0 : Data Cleaning
+Requirements:
+1. It should never delete the data
+2. just skip the data that is not necessary
+3. It should handle any type of input text, image, pdf, document, audio, video(optional).
+Questions:
+1. how to write the python code for data cleaning ?
+so that it should satisfy all the requirements .
+
+2.So for the front-end it should have a Agentic Ai based interface like prompt bar to ask, attachments to upload the docs, images etc. 
+
+3.so what will the big picture look like for the project ?
+
+
+
